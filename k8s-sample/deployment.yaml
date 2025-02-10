@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-python-sample
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: k8s-python-sample
+  template:
+    metadata:
+      labels:
+        app: k8s-python-sample
+    spec:
+      containers:
+      - name: k8s-python-sample
+        image: k8s-python-sample
+        ports:
+        - containerPort: 5001
